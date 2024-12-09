@@ -1,7 +1,7 @@
 export default function LoginPage() {
    return (
       <div className="h-full flex flex-col items-center justify-center">
-         <form className="max-w-sm mx-auto p-6 border border-zinc-800 rounded-xl">
+         <form className="max-w-sm mx-auto p-6 border border-zinc-800 rounded bg-zinc-900">
             <h2 className="text-lg font-bold mb-4">Login</h2>
             <input
                type="text"
