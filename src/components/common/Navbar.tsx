@@ -16,17 +16,37 @@ export default function Navbar() {
       <nav className="w-full py-6 border-b border-b-muted-foreground">
          <div className="flex justify-between items-center">
             <Link href={'/'}>
-               <h1 className="font-semibold text-xl">Next.js Auth Demo</h1>
+               <h1 className="font-semibold text-2xl tracking-tight">
+                  Next.js Auth Demo
+               </h1>
             </Link>
 
             <NavigationMenu>
                <NavigationMenuList>
                   <NavigationMenuItem>
-                     <Link href="/docs" legacyBehavior passHref>
+                     <Link href="/" legacyBehavior passHref>
                         <NavigationMenuLink
                            className={navigationMenuTriggerStyle()}
                         >
-                           Documentation
+                           <span className="text-lg">Home</span>
+                        </NavigationMenuLink>
+                     </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                     <Link href="/" legacyBehavior passHref>
+                        <NavigationMenuLink
+                           className={navigationMenuTriggerStyle()}
+                        >
+                           <span className="text-lg">Home</span>
+                        </NavigationMenuLink>
+                     </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                     <Link href="/" legacyBehavior passHref>
+                        <NavigationMenuLink
+                           className={navigationMenuTriggerStyle()}
+                        >
+                           <span className="text-lg">Home</span>
                         </NavigationMenuLink>
                      </Link>
                   </NavigationMenuItem>
