@@ -1,4 +1,4 @@
-import { signIn } from '@/actions/signIn';
+import { signIn } from '@/actions';
 import { Button } from './UI/button';
 import { ArrowBigRight } from 'lucide-react';
 
