@@ -1,15 +1,6 @@
-import {
-   NavigationMenu,
-   NavigationMenuContent,
-   NavigationMenuIndicator,
-   NavigationMenuItem,
-   NavigationMenuLink,
-   NavigationMenuList,
-   NavigationMenuTrigger,
-   navigationMenuTriggerStyle,
-   NavigationMenuViewport,
-} from '@/components/UI/navigation-menu';
 import Link from 'next/link';
+import SignInButton from './SignInButton';
+import { Button } from '../UI/button';
 
 export default function Navbar() {
    return (
@@ -21,37 +12,25 @@ export default function Navbar() {
                </h1>
             </Link>
 
-            <NavigationMenu>
-               <NavigationMenuList>
-                  <NavigationMenuItem>
-                     <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink
-                           className={navigationMenuTriggerStyle()}
-                        >
-                           <span className="text-lg">Home</span>
-                        </NavigationMenuLink>
-                     </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                     <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink
-                           className={navigationMenuTriggerStyle()}
-                        >
-                           <span className="text-lg">Home</span>
-                        </NavigationMenuLink>
-                     </Link>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                     <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink
-                           className={navigationMenuTriggerStyle()}
-                        >
-                           <span className="text-lg">Home</span>
-                        </NavigationMenuLink>
-                     </Link>
-                  </NavigationMenuItem>
-               </NavigationMenuList>
-            </NavigationMenu>
+            <div className="flex gap-2  items-center">
+               <Link href={'/'}>
+                  <Button variant={'link'} size={'default'}>
+                     <span className="text-md">Home</span>
+                  </Button>
+               </Link>
+               <Link href={'/'}>
+                  <Button variant={'link'} size={'default'}>
+                     <span className="text-md">Home</span>
+                  </Button>
+               </Link>
+               <Link href={'/'}>
+                  <Button variant={'link'} size={'default'}>
+                     <span className="text-md">Home</span>
+                  </Button>
+               </Link>
+
+               <SignInButton />
+            </div>
          </div>
       </nav>
    );
