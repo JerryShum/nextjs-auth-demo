@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import SignInButton from '../SignInButton';
 import { Button } from '../UI/button';
+import NavAuth from './NavAuth';
 
 export default function Navbar() {
    return (
@@ -29,7 +30,7 @@ export default function Navbar() {
                   </Button>
                </Link>
 
-               <SignInButton />
+               <NavAuth />
             </div>
          </div>
       </nav>

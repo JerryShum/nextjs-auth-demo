@@ -29,10 +29,10 @@ export default function RootLayout({
          <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background px-60 flex flex-col max-h-screen overflow-hidden`}
          >
-            <Navbar />
-            <main className="flex-grow">
-               <Providers>{children}</Providers>
-            </main>
+            <Providers>
+               <Navbar />
+               <main className="flex-grow"> {children}</main>
+            </Providers>
          </body>
       </html>
    );
