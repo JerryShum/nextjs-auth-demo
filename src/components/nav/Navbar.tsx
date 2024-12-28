@@ -19,9 +19,9 @@ export default function Navbar() {
                      <span className="text-md">Home</span>
                   </Button>
                </Link>
-               <Link href={'/'}>
+               <Link href={'/login'}>
                   <Button variant={'link'} size={'default'}>
-                     <span className="text-md">Home</span>
+                     <span className="text-md">Login Page</span>
                   </Button>
                </Link>
                <Link href={'/'}>
