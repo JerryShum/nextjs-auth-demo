@@ -3,6 +3,7 @@ import { Button } from '../UI/button';
 import { Input } from '../UI/input';
 import { Label } from '../UI/label';
 import { Separator } from '../UI/separator';
+import ContinueWithGithub from './ContinueWithGithub';
 
 export default function LoginForm() {
    return (
@@ -45,18 +46,14 @@ export default function LoginForm() {
             <h4 className="text-center text-muted-foreground my-4">or</h4>
 
             <div className="flex flex-col gap-4">
-               <Button size={'lg'}>
-                  <span className="font-semibold tracking-wide">
-                     Continue With GitHub
-                  </span>{' '}
-                  <Cat className="!w-8 !h-8" />
-               </Button>
-               <Button size={'lg'}>
+               <ContinueWithGithub />
+
+               {/* <Button size={'lg'}>
                   <span className="font-semibold tracking-wide">
                      Continue With Google
                   </span>{' '}
                   <DogIcon className="!w-8 !h-8" />{' '}
-               </Button>
+               </Button> */}
             </div>
          </div>
       </div>
