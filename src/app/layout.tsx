@@ -32,7 +32,7 @@ export default function RootLayout({
             <Providers>
                <div className="flex flex-col h-screen overflow-hidden">
                   <Navbar />
-                  <main className="flex-grow"> {children}</main>
+                  <main className="flex-grow container"> {children}</main>
                </div>
             </Providers>
          </body>
