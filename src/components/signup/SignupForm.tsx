@@ -1,18 +1,24 @@
 'use client';
 
+import * as actions from '@/actions';
 import ContinueWithGithub from '@/components/login/ContinueWithGithub';
+import { useActionState } from 'react';
 import { Button } from '../UI/button';
 import { Input } from '../UI/input';
 import { Label } from '../UI/label';
-import { useActionState } from 'react';
-import * as actions from '@/actions';
+import FormMessage from '../common/FormMessage';
 
 export default function SignupForm() {
    const initialState = {
-      error: '',
+      errors: {
+         email: [''],
+         password: [''],
+         confirmPassword: [''],
+         _form: [''],
+      },
    };
 
-   const [state, formAction, isPending] = useActionState(
+   const [formState, formAction, isPending] = useActionState(
       actions.signUp,
       initialState
    );
@@ -20,8 +26,8 @@ export default function SignupForm() {
    return (
       <div className="p-8 border-2 border-muted rounded-lg flex flex-col items-center max-w-96 h-full">
          <h2 className="text-3xl font-semibold">Sign Up</h2>
-         <div className="flex flex-col mt-4 min-h-full min-w-64">
-            <form>
+         <div className="flex flex-col mt-4 min-h-full">
+            <form action={formAction} method="POST">
                <div className="flex flex-col gap-4">
                   <div>
                      <Label
@@ -37,6 +43,11 @@ export default function SignupForm() {
                         name="email"
                         required
                      />
+                     {formState.errors.email ? (
+                        <FormMessage>
+                           {formState.errors.email.join(', ')}
+                        </FormMessage>
+                     ) : null}
                   </div>
                   <div>
                      <Label
@@ -52,6 +63,11 @@ export default function SignupForm() {
                         name="password"
                         required
                      />
+                     {formState.errors.password ? (
+                        <FormMessage>
+                           {formState.errors.password.join(', ')}
+                        </FormMessage>
+                     ) : null}
                   </div>
                   <div>
                      <Label
@@ -61,14 +77,24 @@ export default function SignupForm() {
                         Confirm Password
                      </Label>
                      <Input
-                        type="text"
+                        type="password"
                         id="confirmPassword"
                         placeholder="Confirm Password"
                         name="confirmPassword"
                         required
                      />
+                     {formState.errors.confirmPassword ? (
+                        <FormMessage>
+                           {formState.errors.confirmPassword.join(', ')}
+                        </FormMessage>
+                     ) : null}
                   </div>
-                  <Button className="" size={'lg'}>
+                  {formState.errors._form ? (
+                     <FormMessage>
+                        {formState.errors._form.join(', ')}
+                     </FormMessage>
+                  ) : null}
+                  <Button className="" size={'lg'} disabled={isPending}>
                      <span className="font-semibold">Sign Up</span>
                   </Button>
                </div>
