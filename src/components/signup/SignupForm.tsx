@@ -19,12 +19,15 @@ export default function SignupForm() {
 
    return (
       <div className="p-8 border-2 border-muted rounded-lg flex flex-col items-center max-w-96 h-full">
-         <h2 className="text-4xl font-semibold">Sign Up</h2>
+         <h2 className="text-3xl font-semibold">Sign Up</h2>
          <div className="flex flex-col mt-4 min-h-full min-w-64">
             <form>
                <div className="flex flex-col gap-4">
                   <div>
-                     <Label htmlFor="email" className="text-lg tracking-wider">
+                     <Label
+                        htmlFor="email"
+                        className="text-base tracking-wider"
+                     >
                         Email
                      </Label>
                      <Input
@@ -32,12 +35,13 @@ export default function SignupForm() {
                         id="email"
                         placeholder="Email"
                         name="email"
+                        required
                      />
                   </div>
                   <div>
                      <Label
                         htmlFor="password"
-                        className="text-lg tracking-wider"
+                        className="text-base tracking-wider"
                      >
                         Password
                      </Label>
@@ -46,12 +50,22 @@ export default function SignupForm() {
                         id="password"
                         placeholder="Password"
                         name="password"
+                        required
                      />
+                  </div>
+                  <div>
+                     <Label
+                        htmlFor="confirmPassword"
+                        className="text-base tracking-wider"
+                     >
+                        Confirm Password
+                     </Label>
                      <Input
-                        type="password"
-                        id="password"
-                        placeholder="Password"
+                        type="text"
+                        id="confirmPassword"
+                        placeholder="Confirm Password"
                         name="confirmPassword"
+                        required
                      />
                   </div>
                   <Button className="" size={'lg'}>
