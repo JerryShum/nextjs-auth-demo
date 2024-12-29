@@ -1,9 +1,22 @@
+'use client';
+
 import ContinueWithGithub from '@/components/login/ContinueWithGithub';
 import { Button } from '../UI/button';
 import { Input } from '../UI/input';
 import { Label } from '../UI/label';
+import { useActionState } from 'react';
+import * as actions from '@/actions';
 
 export default function SignupForm() {
+   const initialState = {
+      error: '',
+   };
+
+   const [state, formAction, isPending] = useActionState(
+      actions.signUp,
+      initialState
+   );
+
    return (
       <div className="p-8 border-2 border-muted rounded-lg flex flex-col items-center max-w-96 h-full">
          <h2 className="text-4xl font-semibold">Sign Up</h2>
@@ -33,6 +46,12 @@ export default function SignupForm() {
                         id="password"
                         placeholder="Password"
                         name="password"
+                     />
+                     <Input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        name="confirmPassword"
                      />
                   </div>
                   <Button className="" size={'lg'}>
