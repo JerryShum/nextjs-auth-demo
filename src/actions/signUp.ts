@@ -1,4 +1,5 @@
 'use server';
+
 import { z } from 'zod';
 
 const signUpFormSchema = z
@@ -17,6 +18,15 @@ const signUpFormSchema = z
       message: 'Passwords must match',
       path: ['confirmPassword'],
    });
+
+interface SignUpFormState {
+   errors: {
+      email?: string[];
+      password?: string[];
+      confirmPassword?: string[];
+      _form?: string[];
+   };
+}
 
 export async function signUp() {
    return {
