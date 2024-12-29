@@ -28,8 +28,28 @@ interface SignUpFormState {
    };
 }
 
-export async function signUp() {
+export async function signUp(
+   formState: SignUpFormState,
+   formData: FormData
+): Promise<SignUpFormState> {
+   const validationResult = signUpFormSchema.safeParse({
+      email: formData.get('email')?.toString(),
+      password: formData.get('password')?.toString(),
+      confirmPassword: formData.get('confirmPassword')?.toString(),
+   });
+
+   //! If form validation fails
+   if (!validationResult.success) {
+      console.log('Sigma:');
+      console.log(validationResult.error.flatten().fieldErrors);
+      return {
+         errors: validationResult.error.flatten().fieldErrors,
+      };
+   }
+
    return {
-      error: 'sigma',
+      errors: {
+         _form: ['sigma'],
+      },
    };
 }
