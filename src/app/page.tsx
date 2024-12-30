@@ -4,8 +4,6 @@ import SignInButton from '@/components/SignInButton';
 export default async function Home() {
    const session = await auth();
 
-   console.log(session?.user);
-
    return (
       <div className="h-full w-full flex flex-col items-center gap-10">
          <h1 className="font-sans text-7xl font-bold mt-40 text-center">
