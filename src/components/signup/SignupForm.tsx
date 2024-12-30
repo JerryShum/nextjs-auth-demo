@@ -11,6 +11,7 @@ import FormMessage from '../common/FormMessage';
 export default function SignupForm() {
    const initialState = {
       errors: {
+         username: [''],
          email: [''],
          password: [''],
          confirmPassword: [''],
@@ -29,6 +30,26 @@ export default function SignupForm() {
          <div className="flex flex-col mt-4 min-h-full">
             <form action={formAction}>
                <div className="flex flex-col gap-4">
+                  <div>
+                     <Label
+                        htmlFor="username"
+                        className="text-base tracking-wider"
+                     >
+                        Username
+                     </Label>
+                     <Input
+                        type="text"
+                        id="username"
+                        placeholder="Username"
+                        name="username"
+                        required
+                     />
+                     {formState.errors.username ? (
+                        <FormMessage>
+                           {formState.errors.username.join(', ')}
+                        </FormMessage>
+                     ) : null}
+                  </div>
                   <div>
                      <Label
                         htmlFor="email"
