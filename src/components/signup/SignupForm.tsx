@@ -27,7 +27,7 @@ export default function SignupForm() {
       <div className="p-8 border-2 border-muted rounded-lg flex flex-col items-center max-w-96 h-full">
          <h2 className="text-3xl font-semibold">Sign Up</h2>
          <div className="flex flex-col mt-4 min-h-full">
-            <form action={formAction} method="POST">
+            <form action={formAction}>
                <div className="flex flex-col gap-4">
                   <div>
                      <Label
@@ -102,7 +102,7 @@ export default function SignupForm() {
 
             <h4 className="text-center text-muted-foreground my-4">or</h4>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 w-full">
                <ContinueWithGithub />
             </div>
          </div>

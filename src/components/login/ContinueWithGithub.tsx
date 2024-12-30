@@ -4,8 +4,8 @@ import * as actions from '@/actions';
 
 export default function ContinueWithGithub() {
    return (
-      <form action={actions.signIn}>
-         <Button size={'lg'}>
+      <form action={actions.signIn} className="w-full">
+         <Button size={'lg'} className="w-full">
             <span className="font-semibold tracking-wide">
                Continue With GitHub
             </span>{' '}
